@@ -1,0 +1,22 @@
+.container {
+    --background: rgba(146, 118, 118, 0.333);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly
+}
+
+.product-image {
+    height: 20%;
+    width: 100%;
+}
+
+.product-details {
+    height: 80%;
+    width: 100%;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-around;
+}
