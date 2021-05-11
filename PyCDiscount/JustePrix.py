@@ -4,7 +4,6 @@ from flask import Flask,render_template,request
 import requests
 import json
 from random import randint
-from win10toast import ToastNotifier
 
 app = Flask(__name__)
 
@@ -19,10 +18,9 @@ def Home():
         reponse = request.form["prixObjet"]
         data['tentative'] = reponse
         data['reponse'] = reponse
-        if int(reponse) < data['price']:
-            toaster = ToastNotifier()
-toaster.show_toast("Sample Notification","Python is awesome!!!")
-        elif int(reponse) > data["price"]:
+        if int(reponse) > data['price']:
+             data["resultat"] = "C'est plus ! Recommence !"
+        elif int(reponse) < data["price"]:
             data["resultat"] = "C'est moins ! Recommence !"
         elif int(reponse) == data['price']:
             
