@@ -1,8 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 from flask import Flask,render_template,request
 import requests
-import json
 from random import randint
 
 app = Flask(__name__)
@@ -48,9 +45,6 @@ def JSON():
     api_url = '{0}/products'.format(URL)
     response = requests.get(api_url, headers=headers)
     products = response.json()
-
-    productObj = {}
-
     productNumberAleatoire = randint(1, 3)
     productFormated = {}
     for product in products['data']:
